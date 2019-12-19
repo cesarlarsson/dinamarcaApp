@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title slot="end">Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card *ngFor="let notification of notifications">
+    <ion-card-header>
+      <ion-card-title> notification {{ notification }} </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

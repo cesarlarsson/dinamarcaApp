@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title slot="end">Devices</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-button (click)="getDevices()"> Scan Devices </ion-button>
+  </ion-item>
+
+
+  <h1>Devices</h1>
+
+  <ion-card *ngFor="let device of devices">
+    <ion-card-header>
+      <ion-card-title>
+        Device  {{ device?.name}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+
+</ion-content>
