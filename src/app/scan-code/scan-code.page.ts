@@ -10,6 +10,7 @@ export class ScanCodePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
