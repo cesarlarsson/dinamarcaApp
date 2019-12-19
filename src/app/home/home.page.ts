@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+import { Toast } from '@ionic-native/toast/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -8,15 +10,21 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 })
 export class HomePage {
 
-  constructor(private qrScanner: QRScanner) {}
+  constructor(private qrScanner: QRScanner,private toast: Toast) {}
 
   clickButton(){
-    console.log('hello');
+    this.toast.show(`I'm a toast`, '5000', 'center').subscribe(
+      toast => {
+        console.log(toast);
+      }
+    );
     // Optionally request the permission early
-this.qrScanner.prepare()
-.then((status: QRScannerStatus) => {
+    this.qrScanner.prepare()
+  .then((status: QRScannerStatus) => {
    if (status.authorized) {
      // camera permission was granted
+
+
 
 
      // start scanning
